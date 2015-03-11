@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace DataModel {
+namespace DataModel.DB {
     public class SqlDataWriter {
         public const string Comma = ", ";
         private readonly TransactionConnection _connection;

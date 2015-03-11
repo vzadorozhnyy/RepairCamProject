@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace DataModel {
+namespace DataModel.DB {
     public class TransactionConnection : IDisposable {
         protected const int DefaultCommandTimeout = 30000;
         private readonly string _connectionString;

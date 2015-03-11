@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataModel {
+namespace DataModel.Objects {
     public class User {
         private readonly Dictionary<Guid, Customer> _customers = new Dictionary<Guid, Customer>();
         private readonly Guid _id;

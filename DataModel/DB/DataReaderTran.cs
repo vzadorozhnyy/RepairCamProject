@@ -3,7 +3,7 @@ using System.Data.Common;
 using System.Diagnostics;
 using System.Text;
 
-namespace DataModel {
+namespace DataModel.DB {
     public class DataReaderTran {
         private readonly List<string> _columns = new List<string>();
         private readonly List<string> _fetchedColumns = new List<string>();

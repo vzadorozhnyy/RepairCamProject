@@ -3,7 +3,7 @@ using System.Data.Common;
 using System.Data.OleDb;
 using System.Diagnostics.CodeAnalysis;
 
-namespace DataModel {
+namespace DataModel.DB {
     public class SimpleConnection {
         protected const int DefaultCommandTimeout = 30000;
         private readonly string _connectionString;

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace DataModel {
+namespace DataModel.DB {
     public sealed class Locker : IDisposable {
         private LockCounter _item;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataModel {
+namespace DataModel.Objects {
     public enum EOrderStatus {
         New = 1,
         Uploaded = 2,

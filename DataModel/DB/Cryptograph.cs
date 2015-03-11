@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace DataModel {
+namespace DataModel.DB {
     internal class NativeMethods {
         // ReSharper disable InconsistentNaming
         public enum ALG_ID {

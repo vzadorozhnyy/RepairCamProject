@@ -6,7 +6,7 @@ using System.Data.OleDb;
 using System.Diagnostics;
 using System.Text;
 
-namespace DataModel {
+namespace DataModel.DB {
     public class DataReader : IDisposable {
         private readonly List<string> _columns = new List<string>();
         private readonly OleDbConnection _connection;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataModel.Objects;
 
 namespace DataModel {
     public class DataManager {

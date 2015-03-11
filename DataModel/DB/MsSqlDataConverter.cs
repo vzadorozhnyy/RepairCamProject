@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataModel {
+namespace DataModel.DB {
     internal class MsSqlDataConverter {
         private const string ValueNULL = "NULL";
 
