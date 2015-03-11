@@ -65,5 +65,31 @@ namespace DataModel.Objects {
             else
                 _customers[customer.Id] = customer;
         }
+
+        public bool HasCustomer(Guid customerId) {
+            return _customers.ContainsKey(customerId);
+        }
+
+        public Customer GetCustomer(Guid customerId) {
+            return _customers.ContainsKey(customerId) ? _customers[customerId] : null;
+        }
+
+        public bool HasOrder(Guid orderId) {
+            foreach (KeyValuePair<Guid, Customer> lPair in _customers)
+                if (lPair.Value.HasOrder(orderId))
+                    return true;
+            return false;
+        }
+
+        public Order GetOrder(Guid orderId) {
+            foreach (KeyValuePair<Guid, Customer> lPair in _customers)
+                if (lPair.Value.HasOrder(orderId))
+                    return lPair.Value.GetOrder(orderId);
+            return null;
+        }
+
+        public List<Customer> GetCustomers() {
+            return new List<Customer>(_customers.Values);
+        }
     }
 }

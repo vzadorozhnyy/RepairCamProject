@@ -53,5 +53,17 @@ namespace DataModel.Objects {
             else
                 _orders[order.Id] = order;
         }
+
+        public bool HasOrder(Guid orderId) {
+            return _orders.ContainsKey(orderId);
+        }
+
+        public Order GetOrder(Guid orderId) {
+            return _orders.ContainsKey(orderId) ? _orders[orderId] : null;
+        }
+
+        public List<Order> GetOrders() {
+            return new List<Order>(_orders.Values);
+        }
     }
 }
