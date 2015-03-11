@@ -156,5 +156,10 @@ namespace DataModel.DB {
             } catch (Exception) {
             }
         }
+
+        public void Init() {
+            _connection.Open();
+            _transaction = _connection.BeginTransaction(IsolationLevel.ReadCommitted);
+        }
     }
 }

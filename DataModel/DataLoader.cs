@@ -45,7 +45,9 @@ namespace DataModel {
                 lock (_connectionLock) {
                     if (string.IsNullOrEmpty(_connectionString))
                         return null;
-                    return new TransactionConnection(_connectionString);
+                    TransactionConnection lConnection = new TransactionConnection(_connectionString);
+                    lConnection.Init();
+                    return lConnection;
                 }
         }
 
@@ -121,6 +123,7 @@ namespace DataModel {
                 SqlDataWriter lWriter = new SqlDataWriter(lConnection, "tblUsers");
                 lWriter.SetValue(ColId, user.Id);
                 lWriter.SetValue(ColEmail, user.Email);
+                lWriter.SetValue(ColName, user.Name);
                 lWriter.SetValue(ColExpireDate, user.ExpireDate);
                 lWriter.SetValue(ColLogin, user.Login);
                 lWriter.SetValue(ColOptions, user.Options);
