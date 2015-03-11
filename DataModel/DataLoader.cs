@@ -95,7 +95,7 @@ namespace DataModel {
 
         private void LoadUserCustomerOrders(Dictionary<Guid, Customer> customers) {
             SimpleConnection lConnection = NewConnection();
-            string lSQL = string.Format("select id, customerid, name, details, status, image, videoUrl, orderDate, videoRecordDatem videoViewDate from tblOrders (nolock)");
+            string lSQL = string.Format("select id, customerid, name, details, status, image, videoUrl, orderDate, videoRecordDate, videoViewDate from tblOrders (nolock)");
             using (DataReader lReader = lConnection.GetData(lSQL))
                 while (lReader.Read()) {
                     Guid lCustomerId = lReader[ColCustomerId].SDAsGuid();

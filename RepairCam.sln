@@ -6,6 +6,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RepairCam", "RepairCam\", "{BEE86254-E74E-4213-AC60-6F6402B601D0}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{0535df3a-1bb4-4ffb-bedf-f6cba7f898b1}|DataModel.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/RepairCam"
 		Debug.AspNetCompiler.PhysicalPath = "RepairCam\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\RepairCam\"
