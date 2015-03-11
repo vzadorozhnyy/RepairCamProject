@@ -1,21 +1,27 @@
 using System;
 using System.Web.Security;
 using System.Web.UI;
+using DataModel;
+using DataModel.DB;
+using DataModel.Objects;
 
 public partial class Login : Page {
-    protected void Page_Load(object sender, EventArgs e) {
-    }
+    protected void Page_Load(object sender, EventArgs e) {}
 
     protected void btnLogin_Click(object sender, EventArgs e) {
-        if (Membership.ValidateUser(tbUserName.Text, tbPassword.Text))
+        User lUser = DataManager.Inst.GetUserByLogin(tbLogin.Text);
+        string lEncrypt = Cryptograph.Encrypt(tbPassword.Text);
+        if (DataManager.Inst.CanUserLogin(tbLogin.Text, lEncrypt)) {
+            //new DataManagerLocal(Session);
+            DataManagerLocal.Inst.LoggedUser = lUser;
             if (string.IsNullOrEmpty(Request.QueryString["ReturnUrl"])) {
-                FormsAuthentication.SetAuthCookie(tbUserName.Text, false);
+                FormsAuthentication.SetAuthCookie(tbLogin.Text, false);
                 Response.Redirect("~/");
             } else
-                FormsAuthentication.RedirectFromLoginPage(tbUserName.Text, false);
-        else {
-            tbUserName.ErrorText = "Invalid user";
-            tbUserName.IsValid = false;
+                FormsAuthentication.RedirectFromLoginPage(tbLogin.Text, false);
+        } else {
+            tbLogin.ErrorText = "Invalid user";
+            tbLogin.IsValid = false;
         }
     }
 }

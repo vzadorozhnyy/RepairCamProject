@@ -5,13 +5,22 @@
     <h2>
         Create a New Account</h2>
     <p>Use the form below to create a new account.</p>
-    <p>Passwords are required to be a minimum of <%= Membership.MinRequiredPasswordLength %> characters in length.</p>
+    <p>Passwords are required to be a minimum of <%= DataManagerLocal.MinRequiredPasswordLength %> characters in length.</p>
 </div>
-    <dx:ASPxLabel ID="lblUserName" runat="server" AssociatedControlID="tbUserName" Text="User Name:" />
+        <dx:ASPxLabel ID="lblLogin" runat="server" AssociatedControlID="tbUserName" Text="Login:" />
 	<div class="form-field">
-	    <dx:ASPxTextBox ID="tbUserName" runat="server" Width="200px">
+	    <dx:ASPxTextBox ID="tbLogin" runat="server" Width="200px">
 	        <ValidationSettings ValidationGroup="RegisterUserValidationGroup">
-	            <RequiredField ErrorText="User Name is required." IsRequired="true" />
+	            <RequiredField ErrorText="Login is required." IsRequired="true" />
+	        </ValidationSettings>
+	    </dx:ASPxTextBox>
+    </div>
+
+    <dx:ASPxLabel ID="lblCompanyName" runat="server" AssociatedControlID="tbUserName" Text="Company Name:" />
+	<div class="form-field">
+	    <dx:ASPxTextBox ID="tbCompanyName" runat="server" Width="200px">
+	        <ValidationSettings ValidationGroup="RegisterUserValidationGroup">
+	            <RequiredField ErrorText="Company Name is required." IsRequired="true" />
 	        </ValidationSettings>
 	    </dx:ASPxTextBox>
     </div>

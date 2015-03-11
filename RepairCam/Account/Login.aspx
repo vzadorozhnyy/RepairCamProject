@@ -8,11 +8,11 @@
         Please enter your username and password. 
 		<a href="Register.aspx">Register</a> if you don't have an account.</p>
 </div>
-<dx:ASPxLabel ID="lblUserName" runat="server" AssociatedControlID="tbUserName" Text="User Name:" />
+<dx:ASPxLabel ID="lblLogin" runat="server" AssociatedControlID="tbLogin" Text="Login:" />
 <div class="form-field">
-	<dx:ASPxTextBox ID="tbUserName" runat="server" Width="200px">
+	<dx:ASPxTextBox ID="tbLogin" runat="server" Width="200px">
 	    <ValidationSettings ValidationGroup="LoginUserValidationGroup">
-	        <RequiredField ErrorText="User Name is required." IsRequired="true" />
+	        <RequiredField ErrorText="Login is required." IsRequired="true" />
 	    </ValidationSettings>
 	</dx:ASPxTextBox>
 </div>

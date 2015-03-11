@@ -1,28 +1,41 @@
-<%@ Application Language="C#" %>
+﻿<%@ Application Language="C#" %>
+<%@ Import Namespace="DataModel" %>
 
 <script runat="server">
-		public class Global_asax : System.Web.HttpApplication {
-			void Application_Start(object sender, EventArgs e) {
-				DevExpress.Web.ASPxClasses.ASPxWebControl.CallbackError += new EventHandler(Application_Error);
-			}
 
-			void Application_End(object sender, EventArgs e) {
-				// Code that runs on application shutdown
-			}
+    void Application_Start(object sender, EventArgs e) 
+    {
+        // Code that runs on application startup
+        string lConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        DataManager.Inst.Init(lConnectionString);
 
-			void Application_Error(object sender, EventArgs e) {
-				// Code that runs when an unhandled error occurs
-			}
+    }
+    
+    void Application_End(object sender, EventArgs e) 
+    {
+        //  Code that runs on application shutdown
 
-			void Session_Start(object sender, EventArgs e) {
-				// Code that runs when a new session is started
-			}
+    }
+        
+    void Application_Error(object sender, EventArgs e) 
+    { 
+        // Code that runs when an unhandled error occurs
 
-			void Session_End(object sender, EventArgs e) {
-				// Code that runs when a session ends. 
-				// Note: The Session_End event is raised only when the sessionstate mode
-				// is set to InProc in the Web.config file. If session mode is set to StateServer 
-				// or SQLServer, the event is not raised.
-			}
-		}
+    }
+
+    void Session_Start(object sender, EventArgs e) 
+    {
+        // Code that runs when a new session is started
+
+    }
+
+    void Session_End(object sender, EventArgs e) 
+    {
+        // Code that runs when a session ends. 
+        // Note: The Session_End event is raised only when the sessionstate mode
+        // is set to InProc in the Web.config file. If session mode is set to StateServer 
+        // or SQLServer, the event is not raised.
+
+    }
+       
 </script>
