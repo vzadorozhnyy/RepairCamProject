@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RepairCam", "http://localhost:1572", "{5DA5D393-CAC1-4857-840E-7AEE100E05CB}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{0535df3a-1bb4-4ffb-bedf-f6cba7f898b1}|DataModel.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1572"
+		Debug.AspNetCompiler.PhysicalPath = "..\RepairCam\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1572\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1572"
+		Release.AspNetCompiler.PhysicalPath = "..\RepairCam\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1572\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\RepairCam\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{0535DF3A-1BB4-4FFB-BEDF-F6CBA7F898B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DA5D393-CAC1-4857-840E-7AEE100E05CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA5D393-CAC1-4857-840E-7AEE100E05CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA5D393-CAC1-4857-840E-7AEE100E05CB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA5D393-CAC1-4857-840E-7AEE100E05CB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0535DF3A-1BB4-4FFB-BEDF-F6CBA7F898B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0535DF3A-1BB4-4FFB-BEDF-F6CBA7F898B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0535DF3A-1BB4-4FFB-BEDF-F6CBA7F898B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0535DF3A-1BB4-4FFB-BEDF-F6CBA7F898B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
