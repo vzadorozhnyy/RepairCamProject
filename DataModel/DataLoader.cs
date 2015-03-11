@@ -20,6 +20,9 @@ namespace DataModel {
         private const string ColStatus = "status";
         private const string ColVideoUrl = "videoUrl";
         private const string ColImage = "image";
+        private const string ColOrderDate = "orderDate";
+        private const string ColVideoRecordDate = "videoRecordDate";
+        private const string ColVideoViewDate = "videoViewDate";
 
         private readonly LockCounter _connectionLock = new LockCounter();
         private readonly string _connectionString;
@@ -92,7 +95,7 @@ namespace DataModel {
 
         private void LoadUserCustomerOrders(Dictionary<Guid, Customer> customers) {
             SimpleConnection lConnection = NewConnection();
-            string lSQL = string.Format("select id, customerid, name, details, status, image, videoUrl from tblOrders (nolock)");
+            string lSQL = string.Format("select id, customerid, name, details, status, image, videoUrl, orderDate, videoRecordDatem videoViewDate from tblOrders (nolock)");
             using (DataReader lReader = lConnection.GetData(lSQL))
                 while (lReader.Read()) {
                     Guid lCustomerId = lReader[ColCustomerId].SDAsGuid();
@@ -106,6 +109,9 @@ namespace DataModel {
                     lOrder.Status = (EOrderStatus) lReader[ColStatus].SDAsInt();
                     lOrder.ImageData = lReader[ColImage].SDAsStr();
                     lOrder.VideoUrl = lReader[ColVideoUrl].SDAsStr();
+                    lOrder.OrderDate = lReader[ColOrderDate].SDAsDate();
+                    lOrder.RecordDate = lReader[ColVideoRecordDate].SDAsDate();
+                    lOrder.ViewDate = lReader[ColVideoViewDate].SDAsDate();
                     customers[lCustomerId].AddOrder(lOrder);
                 }
         }

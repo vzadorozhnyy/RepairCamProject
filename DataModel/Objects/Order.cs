@@ -6,7 +6,8 @@ namespace DataModel.Objects {
         Uploaded = 2,
         Sended = 3,
         Viewed = 4,
-        Closed = 5
+        Closed = 5,
+        Archived = 6
     }
 
     public class Order {
@@ -15,8 +16,11 @@ namespace DataModel.Objects {
         private string _details;
         private string _imageData;
         private string _name;
+        private DateTime _orderDate = DateTime.Now;
+        private DateTime _recordDate;
         private EOrderStatus _status = EOrderStatus.New;
         private string _videoUrl;
+        private DateTime _viewDate;
 
         public Order(Customer customer) : this(customer, Guid.NewGuid()) {
         }
@@ -57,6 +61,21 @@ namespace DataModel.Objects {
         public EOrderStatus Status {
             get { return _status; }
             set { _status = value; }
+        }
+
+        public DateTime OrderDate {
+            get { return _orderDate; }
+            set { _orderDate = value; }
+        }
+
+        public DateTime RecordDate {
+            get { return _recordDate; }
+            set { _recordDate = value; }
+        }
+
+        public DateTime ViewDate {
+            get { return _viewDate; }
+            set { _viewDate = value; }
         }
     }
 }
