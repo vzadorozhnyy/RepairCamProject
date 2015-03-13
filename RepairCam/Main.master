@@ -1,8 +1,9 @@
 <%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="MainMaster" %>
+<%@ Reference Control="~/Dialogs/WebDialogManager.ascx" %>
 
 <%-- DXCOMMENT: Page Main.master is a master page that contains central area layout --%>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
-    <dx:ASPxSplitter ID="ContentSplitter" runat="server" Width="100%" Height="100%">
+    <dx:ASPxSplitter ID="_mainSplitter" ClientInstanceName="_mainSplitter" runat="server" Width="100%" Height="100%">
         <Styles>
             <Pane>
                 <Paddings Padding="0px" />
@@ -19,12 +20,12 @@
                     <dx:SplitterContentControl>
                         <div class="leftPanel">
 							<%-- DXCOMMENT: Configure the left panel's ASPxNavBar --%>
-<dx:ASPxNavBar ID="ASPxNavBar1" runat="server" AutoCollapse="True" EnableAnimation="True"
+<dx:ASPxNavBar ID="_navBarMenu" ClientInstanceName="_navBarMenu" runat="server" AutoCollapse="True" EnableAnimation="True" AllowSelectItem="True"
     Width="100%" RenderMode="Lightweight" DataSourceID="XmlDataSourceLeft">
     <Border BorderWidth="0px" />
     <Paddings Padding="0px" />
 </dx:ASPxNavBar>
-
+<dx:ASPxButton runat="server" ID="addBtn" Text="Add Order" AutoPostBack="False"><ClientSideEvents Click="function(s,e){createDialog('AddOrderDialog','add');}"></ClientSideEvents></dx:ASPxButton>
                         </div>
                     </dx:SplitterContentControl>
                 </ContentCollection>

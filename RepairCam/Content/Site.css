@@ -701,3 +701,11 @@ html, body {
 {
 	border-bottom: 0!important;
 }
+
+.popupTableClass td {
+    padding: 2px;
+}
+
+.dxgvPagerTopPanel_Youthful, .dxgvPagerBottomPanel_Youthful {
+    padding: 4px !important;
+}

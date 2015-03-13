@@ -155,6 +155,7 @@ namespace DataModel {
                 lWriter.SetValue(ColDetails, order.Details);
                 lWriter.SetValue(ColStatus, (int) order.Status);
                 lWriter.SetValue(ColImage, order.ImageData);
+                lWriter.SetValue(ColOrderDate, order.OrderDate);
                 lWriter.SetValue(ColVideoUrl, order.VideoUrl);
                 lWriter.ExecuteAuto(ColId);
             }

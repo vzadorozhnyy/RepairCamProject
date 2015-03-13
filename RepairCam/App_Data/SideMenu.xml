@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu>
   <group Text="New">
-    <item Text="Waiting" />
-    <item Text="Recorded" />
-    <item Text="Viewed" />
+    <item Text="Waiting" Name="Waiting"/>
+    <item Text="Recorded" Name="Recorded"/>
+    <item Text="Viewed" Name="Viewed"/>
   </group>
-  <group Text="Processed">
-    <item Text="Recent" />
-    <item Text="Archived" />
+  <group Text="Processed" Name="Processed">
+    <item Text="Recent" Name="Processed"/>
+    <item Text="Archived" Name="Processed"/>
   </group>
  </menu>

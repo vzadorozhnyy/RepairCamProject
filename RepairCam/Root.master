@@ -1,14 +1,20 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="Root.master.cs" Inherits="RootMaster" %>
 
+<%@ Register Src="~/Dialogs/WebDialogManager.ascx" TagPrefix="uc1" TagName="WebDialogManager" %>
+
+
+
 <%-- DXCOMMENT: Page Root.master is a master page that contains the root layout (it includes Header, Cental Area, and Footer) --%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+    <script src="Content/app.js"></script>
 </head>
 <body runat="server" id="Body">
     <form id="form1" runat="server">
+        <uc1:WebDialogManager runat="server" ID="WebDialogManager" />
     <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" Orientation="Vertical"
         FullscreenMode="True" SeparatorVisible="False" Height="100%" Width="100%">
         <Styles>

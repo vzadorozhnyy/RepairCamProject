@@ -5,14 +5,13 @@ using DataModel;
 using DataModel.DB;
 using DataModel.Objects;
 
-public partial class Login : Page {
+public partial class Login : PageEx {
     protected void Page_Load(object sender, EventArgs e) {}
 
     protected void btnLogin_Click(object sender, EventArgs e) {
         User lUser = DataManager.Inst.GetUserByLogin(tbLogin.Text);
         string lEncrypt = Cryptograph.Encrypt(tbPassword.Text);
         if (DataManager.Inst.CanUserLogin(tbLogin.Text, lEncrypt)) {
-            //new DataManagerLocal(Session);
             DataManagerLocal.Inst.LoggedUser = lUser;
             if (string.IsNullOrEmpty(Request.QueryString["ReturnUrl"])) {
                 FormsAuthentication.SetAuthCookie(tbLogin.Text, false);
